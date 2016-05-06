@@ -17,6 +17,6 @@ Running following command  will launch the web application
 ```
 $ python app.py
 ```
-You can check the dashboard app at <a href="http://localhost:5000">http://localhost:5000</a>. It will automaticaly refresh the page every 30 seconds.  
+You can check the dashboard app at <a href="http://localhost:5000">http://localhost:5000</a>. The page automaticaly refresh every 30 seconds.  
 
 
