@@ -1,8 +1,8 @@
 # GPUWebDashboard
 
-This is a simple web dashboard application build using Flask and D3.js . The application shows a list of Nvidia GPU devices and there resource usage. 
+This is a simple web dashboard application build using Flask and D3.js . The application shows a list of Nvidia GPU devices and their resource usage. 
 
-It is written over a weekend while I was teaching myself data visualization using D3.js library. Along a steep learning curve I manage to build there reusable components: a  guage, a thermometer and a radial plot. These component are used to display GPU device memroy usage, temperature and fan speed.
+It is written over a weekend while I was teaching myself data visualization using D3.js library. Along a steep learning curve I manage to build three reusable components: guage, thermometer and radial plot. They are used to display GPU device memroy usage, temperature and fan speed.
 
 ![](https://raw.githubusercontent.com/isrish/GPUWebDashboard/master/img/screen.png)
 
