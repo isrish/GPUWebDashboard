@@ -1,5 +1,6 @@
 import nvidia_smi
 from lxml import objectify
+import os
 from lxml import etree
 import re
 
@@ -22,17 +23,19 @@ def encode_tojson(tree):
         struct['FanSpeed'] = re.sub('[^0-9]', '', str(tree.gpu[i].fan_speed))
         struct['PerformanceState'] = str(tree.gpu[i].performance_state)
         struct['Process'] = []
-        if str(tree.gpu[i].processes) != "N/A" and tree.gpu[i].find('.//process_info'):
+        struct['NumProcess'] = 0
+        if str(tree.gpu[i].processes) != "N/A" and tree.gpu[i].find('.//process_info') is not None:
             #print(etree.tostring(tree.gpu[i].processes,pretty_print=True))
             num_prc = len(tree.gpu[i].processes.process_info)
             for j in range(num_prc):
                 proc_dic = {}
                 proc_dic['PID'] = re.sub('[^0-9]', '', str(tree.gpu[i].processes.process_info[j].pid))
-                proc_dic['PName'] = str(tree.gpu[i].processes.process_info[j].process_name)
-                proc_dic['MemoryUsed'] = re.sub('[^0-9]', '', str(tree.gpu[i].processes.process_info[j].used_memory))
+                proc_dic['Process Name'] = str(tree.gpu[i].processes.process_info[j].process_name)
+                proc_dic['Memory Used'] = str(tree.gpu[i].processes.process_info[j].used_memory)
                 struct['Process'].append(proc_dic)
+            struct['NumProcess'] = num_prc
         ret.append(struct)
-    return ret
+    return os.uname()[1], ret
 
 
 if __name__ == "__main__":
