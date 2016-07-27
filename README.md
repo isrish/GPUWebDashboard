@@ -4,7 +4,7 @@ This is a simple web dashboard application build using Flask and D3.js . The app
 
 It is written over a weekend while I was teaching myself data visualization using D3.js library. Along a steep learning curve I manage to build three reusable components: guage, thermometer and radial plot. They are used to display GPU device memroy usage, temperature and fan speed.
 
-![](https://raw.githubusercontent.com/isrish/GPUWebDashboard/master/img/screen.png)
+![](https://raw.githubusercontent.com/isrish/GPUWebDashboard/master/img/screenV2.png)
 
 # Usage
 ## Setup
